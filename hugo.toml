@@ -68,6 +68,7 @@ enableRobotsTXT = true
     image = ""
     links = [
       { github = "https://github.com/jacobxli-xx" },
+      { linkedin = "https://www.linkedin.com/in/xiangli1874/" },
     ]
 
 [menu]
