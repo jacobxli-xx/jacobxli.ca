@@ -1,48 +1,95 @@
 baseURL = 'https://jacobxli.ca/'
-languageCode = 'en-us'
+languageCode = 'en'
 title = "Jacob Li"
-theme = 'PaperMod'
+theme = 'blowfish'
+
+defaultContentLanguage = "en"
+enableRobotsTXT = true
 
 [params]
-  env = "production"
-  description = "Jacob Li's personal site & tech blog"
-  author = "Jacob Li"
-  showReadingTime = true
-  showShareButtons = false
-  showPostNavLinks = true
-  showBreadCrumbs = true
-  showCodeCopyButtons = true
-  defaultTheme = "auto"  # auto switches between light/dark based on system
+  colorScheme = "blowfish"
+  defaultAppearance = "dark"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
+  mainSections = ["posts"]
 
-  [params.homeInfoParams]
-    Title = "Hey, I'm Jacob 👋"
-    Content = "Software developer. Writing about tech, code, and things I find interesting."
+  [params.header]
+    layout = "fixed-fill-blur"  # blur effect on scroll
 
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/jacobxli-xx"
+  [params.footer]
+    showMenu = true
+    showCopyright = true
+    showThemeAttribution = false
+    showAppearanceSwitcher = true
+    showScrollToTop = true
+
+  [params.homepage]
+    layout = "hero"
+    homepageImage = "/img/hero.jpg"
+    showRecent = true
+    showRecentItems = 6
+    showMoreLink = true
+    showMoreLinkDest = "posts"
+    cardView = true
+    cardViewScreenWidth = false
+    layoutBackgroundBlur = true
+    disableHeroImageFilter = true
+
+  [params.article]
+    showDate = true
+    showDateUpdated = false
+    showAuthor = true
+    showReadingTime = true
+    showTableOfContents = true
+    showTaxonomies = true
+    showWordCount = false
+    showBreadcrumbs = true
+    showPagination = true
+    showHero = true
+    heroStyle = "background"
+    layoutBackgroundBlur = true
+    showRelatedContent = true
+    relatedContentLimit = 3
+    showZenMode = true
+
+  [params.list]
+    showHero = true
+    heroStyle = "background"
+    showBreadcrumbs = true
+    showSummary = true
+    cardView = true
+    groupByYear = true
+
+  [params.author]
+    name = "Jacob Li"
+    headline = "Software Developer"
+    bio = "Writing about tech, code, and things I find interesting."
+    image = ""
+    links = [
+      { github = "https://github.com/jacobxli-xx" },
+    ]
 
 [menu]
   [[menu.main]]
     identifier = "posts"
     name = "Blog"
-    url = "/posts/"
+    pageRef = "posts"
     weight = 1
-  [[menu.main]]
-    identifier = "archives"
-    name = "Archives"
-    url = "/archives/"
-    weight = 2
-  [[menu.main]]
-    identifier = "search"
-    name = "Search"
-    url = "/search/"
-    weight = 3
   [[menu.main]]
     identifier = "about"
     name = "About"
-    url = "/about/"
-    weight = 4
+    pageRef = "about"
+    weight = 2
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]  # JSON needed for search
+  home = ["HTML", "RSS", "JSON"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,14 @@
+/* Hero text overlay - dark semi-transparent backdrop for readability */
+.hero-image-nozoom + div,
+.shadow-xl .relative.px-4 {
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 1rem;
+  padding: 2rem !important;
+}
+
+/* Make hero text white and readable */
+.shadow-xl h1,
+.shadow-xl h2 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}

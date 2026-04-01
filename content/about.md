@@ -1,7 +1,6 @@
 ---
 title: "About"
-url: "/about/"
-summary: "about"
+layout: "simple"
 ---
 
 Hi, I'm Jacob. Welcome to my site.
